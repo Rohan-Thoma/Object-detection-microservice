@@ -1,0 +1,134 @@
+[
+    {
+        "object_id": 0,
+        "class_name": "dog",
+        "confidence_score": "0.93",
+        "relative_bbox_coordinates": [
+            0.4085,
+            0.402,
+            0.6078,
+            0.8235
+        ]
+    },
+    {
+        "object_id": 1,
+        "class_name": "dog",
+        "confidence_score": "0.92",
+        "relative_bbox_coordinates": [
+            0.6471,
+            0.5613,
+            0.9379,
+            0.8897
+        ]
+    },
+    {
+        "object_id": 2,
+        "class_name": "car",
+        "confidence_score": "0.88",
+        "relative_bbox_coordinates": [
+            0.8056,
+            0.0025,
+            0.9199,
+            0.2451
+        ]
+    },
+    {
+        "object_id": 3,
+        "class_name": "car",
+        "confidence_score": "0.88",
+        "relative_bbox_coordinates": [
+            0.8742,
+            0.0,
+            0.9984,
+            0.3137
+        ]
+    },
+    {
+        "object_id": 4,
+        "class_name": "car",
+        "confidence_score": "0.81",
+        "relative_bbox_coordinates": [
+            0.7075,
+            0.0,
+            0.7892,
+            0.1887
+        ]
+    },
+    {
+        "object_id": 5,
+        "class_name": "car",
+        "confidence_score": "0.81",
+        "relative_bbox_coordinates": [
+            0.6454,
+            0.0,
+            0.732,
+            0.1348
+        ]
+    },
+    {
+        "object_id": 6,
+        "class_name": "dog",
+        "confidence_score": "0.80",
+        "relative_bbox_coordinates": [
+            0.152,
+            0.3627,
+            0.3725,
+            0.799
+        ]
+    },
+    {
+        "object_id": 7,
+        "class_name": "car",
+        "confidence_score": "0.80",
+        "relative_bbox_coordinates": [
+            0.7418,
+            0.0,
+            0.8513,
+            0.2181
+        ]
+    },
+    {
+        "object_id": 8,
+        "class_name": "cow",
+        "confidence_score": "0.61",
+        "relative_bbox_coordinates": [
+            0.0049,
+            0.3186,
+            0.2255,
+            0.4608
+        ]
+    },
+    {
+        "object_id": 9,
+        "class_name": "dog",
+        "confidence_score": "0.44",
+        "relative_bbox_coordinates": [
+            0.3154,
+            0.3284,
+            0.4183,
+            0.6691
+        ]
+    },
+    {
+        "object_id": 10,
+        "class_name": "dog",
+        "confidence_score": "0.41",
+        "relative_bbox_coordinates": [
+            0.1634,
+            0.3333,
+            0.2778,
+            0.4681
+        ]
+    },
+    {
+        "object_id": 11,
+        "class_name": "dog",
+        "confidence_score": "0.35",
+        "relative_bbox_coordinates": [
+            0.0049,
+            0.3186,
+            0.2222,
+            0.4608
+        ]
+    }
+]

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Microservice</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; background-color: #f9fafb; display: flex; justify-content: center; padding: 2rem; }
+        .container { background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); max-width: 1000px; width: 100%; }
+        h1, p { text-align: center; color: #111827; }
+        h1 { font-size: 1.875rem; font-weight: 600; }
+        p { color: #6b7280; margin-bottom: 2rem; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .column { display: flex; flex-direction: column; gap: 1rem; }
+        .image-box, .json-box, .upload-box { border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; }
+        h2 { font-size: 1.125rem; font-weight: 500; color: #374151; margin-top: 0; }
+        img { max-width: 100%; border-radius: 0.25rem; }
+        pre { background-color: #f3f4f6; padding: 1rem; border-radius: 0.25rem; white-space: pre-wrap; word-break: break-all; font-family: monospace; }
+        input[type="file"] { border: 1px solid #d1d5db; border-radius: 0.375rem; padding: 0.5rem; width: 100%; }
+        button { background-color: #3b82f6; color: white; font-weight: 500; padding: 0.75rem 1rem; border: none; border-radius: 0.375rem; cursor: pointer; width: 100%; font-size: 1rem; transition: background-color 0.2s; }
+        button:hover { background-color: #2563eb; }
+        .loader { text-align: center; display: none; padding: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Object Detection Microservice</h1>
+        <p>Upload an image to see the detected objects. The results will be shown as an annotated image and a structured JSON output.</p>
+        
+        <div class="content">
+            <div class="column">
+                <div class="upload-box">
+                    <h2>Input Image</h2>
+                    <input type="file" id="imageInput" accept="image/*">
+                    <img id="imagePreview" src="#" alt="Your image" style="display:none; margin-top:1rem;" />
+                </div>
+                <div class="image-box">
+                    <h2>Output Image</h2>
+                    <div id="loader" class="loader">Detecting...</div>
+                    <img id="outputImage" src="#" alt="Detection results" style="display:none;" />
+                </div>
+            </div>
+            <div class="column">
+                <div class="json-box">
+                    <h2>JSON Output</h2>
+                    <pre id="jsonOutput">Results will appear here.</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const outputImage = document.getElementById('outputImage');
+        const jsonOutput = document.getElementById('jsonOutput');
+        const loader = document.getElementById('loader');
+
+        imageInput.addEventListener('change', function(event) {
+            if (this.files && this.files[0]) {
+                // Display image preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(this.files[0]);
+                
+                // Automatically submit for detection
+                detectObjects(this.files[0]);
+            }
+        });
+
+        async function detectObjects(file) {
+            // Reset UI
+            outputImage.style.display = 'none';
+            jsonOutput.textContent = 'Processing...';
+            loader.style.display = 'block';
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/detect', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Update UI with results
+                outputImage.src = data.image_url + '?t=' + new Date().getTime(); // Cache buster
+                outputImage.style.display = 'block';
+                jsonOutput.textContent = JSON.stringify(data.json_output, null, 2);
+
+            } catch (error) {
+                console.error("Error detecting objects:", error);
+                jsonOutput.textContent = `Error: ${error.message}`;
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

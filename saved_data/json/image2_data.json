@@ -1,0 +1,123 @@
+[
+    {
+        "object_id": 0,
+        "class_name": "person",
+        "confidence_score": "0.89",
+        "relative_bbox_coordinates": [
+            0.4974,
+            0.5527,
+            0.5761,
+            0.8458
+        ]
+    },
+    {
+        "object_id": 1,
+        "class_name": "person",
+        "confidence_score": "0.89",
+        "relative_bbox_coordinates": [
+            0.4205,
+            0.5604,
+            0.4923,
+            0.8458
+        ]
+    },
+    {
+        "object_id": 2,
+        "class_name": "car",
+        "confidence_score": "0.86",
+        "relative_bbox_coordinates": [
+            0.7863,
+            0.599,
+            0.9214,
+            0.7404
+        ]
+    },
+    {
+        "object_id": 3,
+        "class_name": "car",
+        "confidence_score": "0.86",
+        "relative_bbox_coordinates": [
+            0.906,
+            0.6015,
+            0.9983,
+            0.7789
+        ]
+    },
+    {
+        "object_id": 4,
+        "class_name": "car",
+        "confidence_score": "0.82",
+        "relative_bbox_coordinates": [
+            0.6308,
+            0.5656,
+            0.8103,
+            0.7584
+        ]
+    },
+    {
+        "object_id": 5,
+        "class_name": "person",
+        "confidence_score": "0.77",
+        "relative_bbox_coordinates": [
+            0.5778,
+            0.5476,
+            0.6376,
+            0.8509
+        ]
+    },
+    {
+        "object_id": 6,
+        "class_name": "traffic light",
+        "confidence_score": "0.76",
+        "relative_bbox_coordinates": [
+            0.4256,
+            0.0129,
+            0.4718,
+            0.2262
+        ]
+    },
+    {
+        "object_id": 7,
+        "class_name": "car",
+        "confidence_score": "0.64",
+        "relative_bbox_coordinates": [
+            0.2393,
+            0.5656,
+            0.3043,
+            0.617
+        ]
+    },
+    {
+        "object_id": 8,
+        "class_name": "traffic light",
+        "confidence_score": "0.42",
+        "relative_bbox_coordinates": [
+            0.3231,
+            0.3213,
+            0.3778,
+            0.401
+        ]
+    },
+    {
+        "object_id": 9,
+        "class_name": "car",
+        "confidence_score": "0.37",
+        "relative_bbox_coordinates": [
+            0.4632,
+            0.5656,
+            0.5179,
+            0.6478
+        ]
+    },
+    {
+        "object_id": 10,
+        "class_name": "person",
+        "confidence_score": "0.27",
+        "relative_bbox_coordinates": [
+            0.3607,
+            0.5835,
+            0.3829,
+            0.6272
+        ]
+    }
+]
