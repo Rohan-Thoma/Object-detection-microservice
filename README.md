@@ -14,6 +14,8 @@ This project demonstrates a production-ready architecture with modern async APIs
 ![OpenCV](https://img.shields.io/badge/OpenCV-Image_Processing-green?logo=opencv)
 
 ---
+<img width="1294" height="1263" alt="image" src="https://github.com/user-attachments/assets/9fd91b21-7539-487d-b8a0-e8f9781132d2" />
+
 
 ## 1. 🧩 Initial Interpretation and Strategy
 
